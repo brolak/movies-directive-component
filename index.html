@@ -1,0 +1,42 @@
+/
+<!DOCTYPE html>
+<html lang="en" ng-app="movieLibrary">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title>Movies App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href='css/app.css' rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container" ng-cloak>
+        <div ng-controller="MoviesCtrl">
+            <div class="movies-header-toolbar">
+                <div class="movies-edit-panel">
+                    <button type="button" class="btn glyphicon glyphicon-plus" ng-click="addMovie()"></button>
+                    <button ng-show="!isDeleting" type="button" class="btn glyphicon glyphicon-trash" ng-click="deleteMovies()"></button>
+                    <button ng-hide="!isDeleting" type="button" class="btn done-button" ng-click="doneDeleteMovies()">Done</button>
+                </div>
+            </div>
+            <div class="movies-container">
+                <movie-item ng-repeat="singleMovie in movies" data="singleMovie" delete-mode="isDeleting" delete-item="deleteMovie(singleMovie.id)"></movie-item>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!--load scripts-->
+    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/movies/moviesService.js"></script>
+    <script type="text/javascript" src="app/movies/moviesCtrl.js"></script>
+    <script type="text/javascript" src="app/movies/movieItemCtrl.js"></script>
+    <script type="text/javascript" src="movie.js"></script>
+</body>
+
+</html>
