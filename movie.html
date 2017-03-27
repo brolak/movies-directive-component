@@ -1,17 +1,15 @@
+<li class="movie-container">
+    <div class="movie-item" ng-click="onMovieClicked()">
+        <div class="movie-image-container">
+            <img class="movie-image" ng-src="{{data.posterImage}}" alt="film image" ng-click="$ctrl.deleteClick()" />
+            <div ng-show="$ctrl.deleteMode" class="movie-delete-icon glyphicon glyphicon-minus-sign delete-icon" /></div>
+            <div class="movie-name">{{data.name | uppercase}}</div>
+            <div class="movie-sub-info">
+            <div class="movie-year">{{data.year}}</div>
+            <div class="movie-resolutions">
+                <span ng-repeat="res in data.supportedResolution track by $index">{{res}}p</span>
+            </div>
+        </div>
+    </div>
 
-                <li class="movie-container">
-                    <div class="movie-item" ng-click="onMovieClicked()">
-                        <div class="movie-image-container">
-                            <img class="movie-image" ng-src="{{data.posterImage}}" alt="film image" ng-click="$ctrl.deleteClick()" />
-                            <div ng-show="$ctrl.deleteMode" class="movie-delete-icon glyphicon glyphicon-minus-sign delete-icon" />
-                        </div>
-                        <div class="movie-name">{{data.name | uppercase}}</div>
-                        <div class="movie-sub-info">
-                            <div class="movie-year">{{data.year}}</div>
-                            <div class="movie-resolutions">
-                                <span ng-repeat="res in data.supportedResolution track by $index">{{res}}p</span>
-                            </div>
-                        </div>
-                        <review-directive></review-directive>
-                    </div>
-                </li>
+</li>

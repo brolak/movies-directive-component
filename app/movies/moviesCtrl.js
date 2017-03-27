@@ -15,10 +15,9 @@ app.controller('MoviesCtrl', ['$scope', 'factory', function($scope, factory) {
     $scope.isDeleting = false;
   };
   
-  $scope.deleteMovie = function(index){
-    
-      factory.removeMovie(index);
-      console.log(index, "deleting");
+  $scope.deleteMovie = function(id){
+    //controller will pass movie id to factory
+      factory.removeMovie(id);
 
   };
  }]);

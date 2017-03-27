@@ -30,6 +30,7 @@ app.factory('factory', [function() {
   }
 
   var removeMovie = function (id) {
+    ///findInex is ES6 function that finds object in movie array with specific id, returns index of match
     var removeIndex = movies.findIndex(movie => movie.id == id);
     movies.splice(removeIndex, 1);
   };
